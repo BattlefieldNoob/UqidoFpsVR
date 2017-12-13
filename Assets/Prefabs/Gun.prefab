@@ -21,7 +21,7 @@ GameObject:
   - component: {fileID: 4346771328251984}
   - component: {fileID: 82530588317938866}
   m_Layer: 0
-  m_Name: Audio
+  m_Name: Audiosource
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -349,6 +349,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   ProjectilePrefab: {fileID: 1286084007366670, guid: 2ee7f483080098b43be41bfd30ee9b9d,
     type: 2}
+  _audioSource: {fileID: 82530588317938866}
   _shotgunSfx:
   - {fileID: 8300000, guid: e1fca709f670d1348adb52d562ea1432, type: 3}
   - {fileID: 8300000, guid: 5fe20b5014ed8a445a0ba2e080f82b7a, type: 3}
