@@ -1,12 +1,18 @@
 ﻿using System;
 using System.Collections;
 using System.Collections.Generic;
+using System.Runtime.Remoting.Messaging;
 using UnityEngine;
 
 public class Gun : MonoBehaviour
 {
     private Transform _emissionTransform;
     public GameObject ProjectilePrefab;
+
+    [Header("Audio")]
+    [SerializeField] private AudioSource _audioSource;
+    [SerializeField] private AudioClip[] _shotgunSfx;
+
 
     private SteamVR_TrackedController _controller;
 
@@ -44,6 +50,8 @@ public class Gun : MonoBehaviour
 
     void Shot()
     {
+        _audioSource.PlayOneShot(_shotgunSfx[UnityEngine.Random.Range(0,_shotgunSfx.Length-1)]);
+        
         RaycastHit hit;
         var ray = new Ray(_emissionTransform.position, _emissionTransform.forward);
         Debug.DrawRay(ray.origin, ray.GetPoint(10), Color.green, 0.3f);
