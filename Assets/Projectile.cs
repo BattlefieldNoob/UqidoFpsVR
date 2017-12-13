@@ -5,15 +5,27 @@ using UnityEngine;
 
 public class Projectile : MonoBehaviour
 {
+	private Rigidbody _rigidbody;
+
+	public float HitForceMultiplier = 1;
 	
 	void Start ()
 	{
-		transform.DOMove(transform.forward*20, 0.3f).OnComplete(() => Destroy(gameObject)).SetEase(Ease.Linear);
+		_rigidbody = GetComponent<Rigidbody>();
+		//_rigidbody.DOMove(transform.forward*20, 0.3f).OnComplete(() => Destroy(gameObject)).SetEase(Ease.Linear);
+		_rigidbody.AddForce(transform.forward*60,ForceMode.Impulse);
+		Invoke(nameof(Destroy),0.3f);
+	}
+
+	private void Destroy()
+	{
+		Destroy(gameObject);
 	}
 
 	private void OnCollisionEnter(Collision other)
 	{
-		transform.DOKill();
+		other.rigidbody?.AddForceAtPosition(_rigidbody.velocity*HitForceMultiplier,other.contacts[0].point);
+		//transform.DOKill();
 		Destroy(gameObject);
 	}
 }
