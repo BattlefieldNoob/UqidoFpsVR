@@ -39,9 +39,6 @@ sysinfo.txt
 fmod.log
 fmod_editor.log
 
-# DoTween
-/Assets/Demigiant
-
 # Builds
 *.apk
 *.unitypackage
