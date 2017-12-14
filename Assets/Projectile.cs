@@ -25,7 +25,6 @@ public class Projectile : MonoBehaviour
 	private void OnCollisionEnter(Collision other)
 	{		
 		other.rigidbody?.AddForceAtPosition(_rigidbody.velocity*HitForceMultiplier,other.contacts[0].point);
-
 		//transform.DOKill();
 		Destroy(gameObject);
 	}
