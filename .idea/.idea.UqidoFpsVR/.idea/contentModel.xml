@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ContentModelStore">
-    <e p="C:\Users\Antonio\.Rider2017.2\system\resharper-host\local\Transient\ReSharperHost\v10\SolutionCaches\_UqidoFpsVR.-355618130.00" t="ExcludeRecursive" />
-    <e p="E:\UnityProjects\MyProjects\UqidoFpsVR" t="IncludeRecursive">
+    <e p="C:\Users\anton\.Rider2017.2\system\resharper-host\local\Transient\ReSharperHost\v10\SolutionCaches\_UqidoFpsVR.793334966.00" t="ExcludeRecursive" />
+    <e p="C:\Users\anton\Documents\UnityProjects\UqidoFpsVR" t="IncludeRecursive">
       <e p="Assembly-CSharp-Editor-firstpass.csproj" t="IncludeRecursive" />
       <e p="Assembly-CSharp-Editor.csproj" t="IncludeRecursive" />
       <e p="Assembly-CSharp.csproj" t="IncludeRecursive" />
@@ -26,7 +26,9 @@
             </e>
           </e>
         </e>
+        <e p="Projectile.cs" t="Include" />
         <e p="Scripts" t="Include">
+          <e p="AudioManager.cs" t="Include" />
           <e p="EventManager.cs" t="Include" />
           <e p="GameManager.cs" t="Include" />
           <e p="Gun.cs" t="Include" />
@@ -34,7 +36,9 @@
           <e p="HitZone.cs" t="Include" />
           <e p="IHitZone.cs" t="Include" />
           <e p="ITarget.cs" t="Include" />
+          <e p="Target.cs" t="Include" />
         </e>
+        <e p="Someone.cs" t="Include" />
         <e p="SteamVR" t="Include">
           <e p="Editor" t="Include">
             <e p="SteamVR_Editor.cs" t="Include" />
@@ -172,7 +176,6 @@
             <e p="SteamVR_Utils.cs" t="Include" />
           </e>
         </e>
-        <e p="Target.cs" t="Include" />
       </e>
       <e p="Library" t="ExcludeRecursive" />
       <e p="obj" t="ExcludeRecursive" />

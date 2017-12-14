@@ -54,7 +54,7 @@ public class Gun : MonoBehaviour
         
         RaycastHit hit;
         var ray = new Ray(_emissionTransform.position, _emissionTransform.forward);
-        Debug.DrawRay(ray.origin, ray.GetPoint(10), Color.green, 0.3f);
+        Debug.DrawRay(ray.origin, _emissionTransform.forward*10, Color.green, 0.3f);
         if (Physics.Raycast(ray, out hit))
         {
             hit.collider.GetComponent<HitZone>()?.Hit(gameObject, hit.point);
