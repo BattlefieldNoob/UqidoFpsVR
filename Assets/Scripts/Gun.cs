@@ -12,6 +12,8 @@ public class Gun : MonoBehaviour
     [Header("Audio")]
     [SerializeField] private AudioSource _audioSource;
     [SerializeField] private AudioClip[] _shotgunSfx;
+    [SerializeField] private AudioClip[] _impactSfx;
+
 
 
     private SteamVR_TrackedController _controller;
@@ -57,9 +59,25 @@ public class Gun : MonoBehaviour
         Debug.DrawRay(ray.origin, _emissionTransform.forward*10, Color.green, 0.3f);
         if (Physics.Raycast(ray, out hit))
         {
-            hit.collider.GetComponent<HitZone>()?.Hit(gameObject, hit.point);
+
+            var hitZone = hit.collider.GetComponent<HitZone>();
+            if (hitZone != null)
+            {
+                hitZone.Hit(gameObject, hit.point);
+
+                var audioSourceHit = hitZone.gameObject.AddComponent<AudioSource>();
+                audioSourceHit.spatialize = true;
+                audioSourceHit.playOnAwake = false;
+                audioSourceHit.maxDistance = 200;
+                audioSourceHit.spatialBlend = .8f;
+                audioSourceHit.PlayOneShot(_impactSfx[UnityEngine.Random.Range(0, _impactSfx.Length - 1)]);
+
+                Destroy(audioSourceHit,1f);
+            }
+                
         }
         _emissionTransform.GetComponentInChildren<ParticleSystem>().Play();
         Instantiate(ProjectilePrefab, _emissionTransform.position, _emissionTransform.rotation);
     }
+    
 }
