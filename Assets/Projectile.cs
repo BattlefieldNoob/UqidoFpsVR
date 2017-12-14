@@ -17,14 +17,16 @@ public class Projectile : MonoBehaviour
 		Invoke(nameof(Destroy),0.3f);
 	}
 
+	
 	private void Destroy()
 	{
 		Destroy(gameObject);
 	}
 
 	private void OnCollisionEnter(Collision other)
-	{
+	{		
 		other.rigidbody?.AddForceAtPosition(_rigidbody.velocity*HitForceMultiplier,other.contacts[0].point);
+
 		//transform.DOKill();
 		Destroy(gameObject);
 	}

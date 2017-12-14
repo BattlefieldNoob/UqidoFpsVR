@@ -305,7 +305,7 @@ AudioSource:
     m_Curve:
     - serializedVersion: 2
       time: 0
-      value: 0
+      value: 1
       inSlope: 0
       outSlope: 0
       tangentMode: 0
@@ -354,6 +354,10 @@ MonoBehaviour:
   - {fileID: 8300000, guid: e1fca709f670d1348adb52d562ea1432, type: 3}
   - {fileID: 8300000, guid: 5fe20b5014ed8a445a0ba2e080f82b7a, type: 3}
   - {fileID: 8300000, guid: 8b2ef19e597b53646aa37695b1f848a9, type: 3}
+  _impactSfx:
+  - {fileID: 8300000, guid: cb6e053e40b58f142ae5025696d510d8, type: 3}
+  - {fileID: 8300000, guid: 315f818b9d82a564daa1c9c83730b750, type: 3}
+  - {fileID: 8300000, guid: 6eb0e0e23652f0443ab5b4a14effe443, type: 3}
 --- !u!114 &114177113276583726
 MonoBehaviour:
   m_ObjectHideFlags: 1
